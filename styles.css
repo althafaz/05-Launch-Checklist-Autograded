@@ -47,3 +47,23 @@ button {
    height: 30px;
    margin: 10px 0;
 }
+
+
+/* validation */
+
+.errorForm {
+   border: 2px solid red;
+}
+
+
+div.formField {
+   margin: 10px 0;
+}
+
+div.formField  input{
+padding: 5px;
+}
+
+.launchFailure{
+color: red
+}
