@@ -59,6 +59,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
     fuelStatus.textContent = 'Fuel level high enough for launch'
     cargoStatus.textContent = 'Cargo mass low enough for launch'
 
+
     if(fuelLevel < 10000) {
         heading.textContent = 'Shuttle Not Ready for Launch';
         heading.style.color = 'red';

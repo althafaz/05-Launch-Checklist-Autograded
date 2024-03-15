@@ -14,39 +14,47 @@ window.addEventListener("load", function() {
 
         const formData = [pilotName,copilotName,fuelLevel,cargoMass]
         let count = 0
+
+        const heading = document.getElementById('launchStatus')
+
+        heading.textContent = 'Awaiting Information Before Launch';
+        heading.style.color = 'black';
+
         for(field of formData){
 
             if(validateInput(field.value) === 'Empty'){
                 console.log(field.value)
-                this.field.classList.add('errorForm')
-                this.field.setAttribute('placeholder','Please enter a value')
+                field.classList.add('errorForm')
+                field.setAttribute('placeholder','Please enter a value')
             }
 
             else
             {
                 if(field.name === 'pilotName' || field.name === 'copilotName'){
                     if(validateInput(field.value) === 'Is a Number'){
-                        this.field.classList.add('errorForm')
-                        this.field.setAttribute('placeholder','Please enter a string value')
+                        field.classList.add('errorForm')
+                        field.value = ''
+                        field.setAttribute('placeholder','Please enter a string value')
                     }
 
                     else {
                         count++
-                        this.field.classList.remove('errorForm')
-                        this.field.removeAttribute('placeholder')
+                        field.classList.remove('errorForm')
+                        field.removeAttribute('placeholder')
                     }
                 }
 
                 if(field.name === 'fuelLevel' || field.name === 'cargoMass'){
                     if(validateInput(field.value) === 'Not a Number'){
-                        this.field.classList.add('errorForm')
-                        this.field.setAttribute('placeholder','Please enter a number')
+                        field.classList.add('errorForm')
+                        field.value = ''
+                        field.setAttribute('placeholder','Please enter a number')
                     }
 
                     else {
                         count++
-                        this.field.classList.remove('errorForm')
-                        this.field.removeAttribute('placeholder')
+                        field.classList.remove('errorForm')
+                        field.removeAttribute('placeholder')
                     }
 
                 }
